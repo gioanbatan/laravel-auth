@@ -55,6 +55,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
+        dd($project);
         return view('admin.projects.show', compact('project'));
     }
 
@@ -66,7 +67,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -78,7 +79,20 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        // $form_data = $request->validated();
+        // $form_data = $request->all();
+        // $form_data['slug'] = Project::generateSlug($form_data['title']);
+        // // dd($form_data);
+
+        // $project->update($form_data);
+        // dd($project);
+        // return redirect('admin.projects.show', $project->slug);
+        // dd($request->validated());
+        $form_data = $request->all();
+        $form_data['slug'] = Project::generateSlug($form_data['title']);
+        $project->update($form_data);
+
+        return redirect()->route('admin.projects.index')->with('message', "$project->title aggiornato!");
     }
 
     /**

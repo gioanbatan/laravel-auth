@@ -44,7 +44,8 @@
                                             class="fa-solid fa-info d-flex justify-content-center align-items-center text-light"></i>
                                     </a>
 
-                                    <a class="btn btn-primary ms_btn-square-2 rounded-circle">
+                                    <a class="btn btn-primary ms_btn-square-2 rounded-circle"
+                                        href="{{ route('admin.projects.edit', $project->slug) }}">
                                         <i
                                             class="fa-solid fa-file-pen d-flex justify-content-center align-items-center text-light"></i>
                                     </a>
