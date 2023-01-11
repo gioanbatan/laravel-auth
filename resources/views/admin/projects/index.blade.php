@@ -50,10 +50,15 @@
                                             class="fa-solid fa-file-pen d-flex justify-content-center align-items-center text-light"></i>
                                     </a>
 
-                                    <a class="btn btn-danger ms_btn-square-2 rounded-circle">
-                                        <i
-                                            class="fa-regular fa-trash-can d-flex justify-content-center align-items-center text-light"></i>
-                                    </a>
+                                    <form action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit"
+                                            class="d-inline-block btn btn-danger ms_btn-square-2 rounded-circle">
+                                            <i
+                                                class="fa-regular fa-trash-can d-flex justify-content-center align-items-center text-light"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
