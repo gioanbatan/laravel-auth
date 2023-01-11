@@ -24,7 +24,7 @@ class ProjectSeeder extends Seeder
 
             $project->title = $faker->sentence(2);
             $project->description = $faker->text(400);
-            $project->slug  = Str::slug($project->title, '-');
+            $project->slug = Str::slug($project->title, '-');
 
             $project->save();
         }
