@@ -2,7 +2,15 @@
 
 @section('content')
     <div class="container mt-4">
-        <h2 class="text-center">Progetti realizzati in Boolean</h2>
+        <h2 class="text-center mb-3">Progetti realizzati in Boolean</h2>
+
+        <div class="row justify-content-center">
+            <div class="col-10 d-flex justify-content-end">
+                <a class="btn btn-primary mb-3" href="{{ route('admin.projects.create') }}">
+                    Crea un nuovo progetto <i class="fa-solid fa-pen-nib ps-2 align-items-center text-light"></i>
+                </a>
+            </div>
+        </div>
 
         <div class="row justify-content-center">
             <div class="col-10">
@@ -26,12 +34,6 @@
                                         href="{{ route('admin.projects.show', $project->slug) }}">
                                         <i
                                             class="fa-solid fa-info d-flex justify-content-center align-items-center text-light"></i>
-                                    </a>
-
-                                    <a class="btn btn-primary ms_btn-square-2 rounded-circle"
-                                        href="{{ route('admin.projects.create') }}">
-                                        <i
-                                            class="fa-solid fa-pen-nib d-flex justify-content-center align-items-center text-light"></i>
                                     </a>
 
                                     <a class="btn btn-primary ms_btn-square-2 rounded-circle">

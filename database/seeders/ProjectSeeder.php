@@ -6,7 +6,6 @@ use App\Models\Project;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
-use Illuminate\Support\Str;
 
 class ProjectSeeder extends Seeder
 {
@@ -24,7 +23,7 @@ class ProjectSeeder extends Seeder
 
             $project->title = $faker->sentence(2);
             $project->description = $faker->text(400);
-            $project->slug = Str::slug($project->title, '-');
+            $project->slug = Project::generateSlug($project->title);
 
             $project->save();
         }
