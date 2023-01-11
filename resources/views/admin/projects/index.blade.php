@@ -5,7 +5,15 @@
         <h2 class="text-center mb-3">Progetti realizzati in Boolean</h2>
 
         <div class="row justify-content-center">
-            <div class="col-10 d-flex justify-content-end">
+            <div class="col-6">
+                @if (session('message'))
+                    <div class="alert alert-success">
+                        {{ session('message') }}
+                    </div>
+                @endif
+            </div>
+
+            <div class="col-4 d-flex align-items-center justify-content-end">
                 <a class="btn btn-primary mb-3" href="{{ route('admin.projects.create') }}">
                     Crea un nuovo progetto <i class="fa-solid fa-pen-nib ps-2 align-items-center text-light"></i>
                 </a>
