@@ -28,4 +28,11 @@ class StoreProjectRequest extends FormRequest
             'description' => ['nullable']
         ];
     }
+
+    public function messages()
+    {
+        return [
+            '' => '',
+        ];
+    }
 }
