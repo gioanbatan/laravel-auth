@@ -39,12 +39,7 @@
 
                     {{-- Image preview --}}
                     <div id="image-preview-wrapper" class="my-3 mx-auto w-75">
-                        @if ($project->cover_image)
-                            <img id="image-preview" src="{{ asset('storage/' . $project->cover_image) }}"
-                                alt={{ "Immagine di $project->cover_image" }}>
-                        @endif
                     </div>
-
 
                     <div class="mb-3">
                         <label for="description" class="form-label">Descrizione</label>
